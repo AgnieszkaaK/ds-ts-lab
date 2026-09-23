@@ -24,9 +24,14 @@ interface Colleague{
     department: string;
     contact: {
         email: string;
-        extension: number;
+        extension: number
     }
 }
+interface ColleagueHistory {
+  current: Colleague[],
+  former: Colleague[]
+}
+
 const colleague1 = {
   name: "Ralph Graham",
   department: "Engineering",
@@ -53,9 +58,11 @@ const colleague3 = {
     extension: 125,
   },
 };
-const colleagues = {
+export const colleagues : ColleagueHistory = {
   current: [colleague1, colleague2, colleague3],
   former: [],
 };
 
+
 console.log(colleagues.current[0]);
+
